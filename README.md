@@ -1,5 +1,9 @@
 # vagrant-dragonfly-cpp: a Vagrant box for building C/C++ binaries for DragonFly BSD
 
+# VAGRANT CLOUD
+
+https://app.vagrantup.com/mcandre/boxes/vagrant-dragonfly-cpp
+
 # EXAMPLE
 
 ```console
