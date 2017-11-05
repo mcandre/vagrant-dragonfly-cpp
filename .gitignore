@@ -1,4 +1,4 @@
-hello
+
 # Created by https://www.gitignore.io/api/c++,vagrant
 
 ### C++ ###
@@ -37,5 +37,6 @@ hello
 
 ### Vagrant ###
 .vagrant/
+*.box
 
 # End of https://www.gitignore.io/api/c++,vagrant
