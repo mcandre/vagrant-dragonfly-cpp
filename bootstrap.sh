@@ -1,3 +1,3 @@
 #!/bin/sh
 sudo pkg update && \
-    sudo pkg install -y gcc
+    sudo pkg install -y llvm50
