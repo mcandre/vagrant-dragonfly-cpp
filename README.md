@@ -8,8 +8,7 @@ https://app.vagrantup.com/mcandre/boxes/vagrant-dragonfly-cpp
 
 ```console
 $ vagrant up
-$ vagrant ssh -c "cd /vagrant && g++ -o hello hello.cpp && ./hello"
-...
+$ vagrant ssh -c "cd /vagrant && clang++ -o hello hello.cpp && ./hello"
 Hello World!
 ```
 
@@ -21,5 +20,5 @@ Hello World!
 # EXPORT
 
 ```console
-$ vagrant package --output vagrant-dragonfly-cpp.box
+$ vagrant destroy -f; vagrant up && vagrant package --output vagrant-dragonfly-cpp.box
 ```
