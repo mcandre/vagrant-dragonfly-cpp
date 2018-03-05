@@ -1,12 +1,9 @@
-BOX=vagrant-dragonflybsd-cpp.box
+BOX=vagrant-dragonfly-cpp.box
 
 .PHONY: launch-vm clean-vm clean-boxes clean-vagrant-metadata
 
 launch-vm: Vagrantfile bootstrap.sh
 	vagrant up
-
-test: launch-vm
-	vagrant ssh -c "cd /vagrant && clang++ -o hello hello.cpp && ./hello"
 
 clean-vm:
 	-vagrant destroy -f
@@ -19,5 +16,8 @@ clean-vagrant-metadata:
 
 clean: clean-boxes clean-vm clean-vagrant-metadata
 
-$(BOX): export.Vagrantfile clean launch-vm
+$(BOX): clean-boxes clean-vm launch-vm export.Vagrantfile
 	vagrant package --output $(BOX) --vagrantfile export.Vagrantfile
+
+install-box-virtualbox: $(BOX)
+	vagrant box add --force --name mcandre/vagrant-dragonfly-cpp $(BOX)
